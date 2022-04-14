@@ -15,8 +15,8 @@ highlighter: rouge
 markdown: kramdown
 comments :
   gitalk :
-    clientID : 30035a359c16e4eae559
-    clientSecret : 828b08303183220e1ac078eb06aa349f3d6c0bd6
+    clientID : d2d805ea6d62fb1db5fb
+    clientSecret : ece60e8c0a8edd17ccf7c402f5ba7289acae7ca8
     repo : Gean-s-library
     owner : LryGean
     admin : [LryGean]
