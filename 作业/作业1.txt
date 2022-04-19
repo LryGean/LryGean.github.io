@@ -1,0 +1,29 @@
+1.使用github创建一个pages博客  ，自己新建仓库，选择风格，并且上传一个md文件！
+2.使用github 复制一个FORK一个模板，在自己的仓库中，并且可以访问该博客（别忘记点source的分支选择）
+
+
+
+作业1
+https://lrygean.github.io/
+https://lrygean.github.io/Technology%20blog/test/1_%E6%95%B0%E6%8D%AE%E8%A7%A3%E6%9E%90
+
+作业2
+https://lrygean.github.io/Git-commen-command.github.io/Git/Git%E6%8C%87%E4%BB%A4
+
+
+1.GK1：select  KH,SX+YW+YY+ZH as total from GK1;
+  GK2：select KH,sum(CJ) total from GK2 group by KH;
+
+2.GK1：select KH,SX+YW+YY+ZH as total from GK1 where (SX+YW+YY+ZH)>350;
+  GK2：select KH,sum(CJ) total from GK2 group by KH having sum(CJ)>350;
+
+3.GK1：selectKH,SX+YW+YY+ZHastotalfromGK1where(SX+YW+YY+ZH)>350 and SX>=80;
+  GK2：① select KH,sum(CJ) 
+	from GK2  
+  	HAVING sum(CJ)>350  
+                group by KH in (select KH from GK2 where KMH='SX' and CJ>80)
+            ②select KH,sum(CJ)  as total 
+               from GK2 
+               where KH in（select KH from GK2 where KMH='sx' and CJ>80） 
+               group by KH  
+               having sum(CJ)>350
