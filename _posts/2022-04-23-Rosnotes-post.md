@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ROS_notes
+title: jekyll安装
 category: tutorial
 thumbnail: /style/image/头像.ico
 icon: book
@@ -9,5 +9,4 @@ icon: book
 * content
 {:toc}
 
-
-###ROS操作
+123
