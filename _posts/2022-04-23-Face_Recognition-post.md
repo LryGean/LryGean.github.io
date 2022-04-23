@@ -15,7 +15,7 @@ icon: book
     }
 </style>
 
-#### 环境配置
+### 环境配置
 
 1. Python-version: 3.9.5
 2. Visual Studio Code
@@ -29,8 +29,8 @@ icon: book
 + urllib（网络请求库）
 + hashlib（提供hash算法）
 
-#### 构建过程
-##### 1. 导入库
+### 构建过程
+#### 1. 导入库
 + import cv2
 + import numpy
 + import os
@@ -40,18 +40,19 @@ import hashlib
 + from PIL import Image
 + from typing import Text
 
-##### 2.过程
+#### 2.过程
 (1) 人脸检测
 (2) 人脸录入
 (3) 数据训练
 (4) 人脸识别
 
-#### 人脸检测
-##### 1. 流程图
+### 人脸检测
+#### 1. 流程图
 ![图片已失效](../style/img/img1/Face%20Detection.png "人脸检测流程图")
-##### 2. 图片检测
-###### (1)代码实例
-```# 导入cv图片
+#### 2. 图片检测
+##### (1)代码实例
+```
+# 导入cv图片
 import cv2 as cv
 #监测函数
 def face_detect_demo():
@@ -75,25 +76,26 @@ while True:
 # 释放内容
 cv.destroyAllWindows()
 ```
-###### (2)检测效果
+##### (2)检测效果
+
 <style>
     .picFace {
         margin: 10px;
-        height: 200px;
+        width: 500px;
     }
     .picFace img {
-        float: left;
         margin: 0 10px;
     }
 </style>
 <div class='picFace'>
-    <img src='../style/img/img1/f1.png' height='200px' title='检测科比'>
-    <img src='../style/img/img1/f2.png' height='200px' title='检测杜兰特'>
-    <img src='../style/img/img1/f3.png' height='200px' title='检测多人'>
+    <img src='../style/img/img1/f1.png' title='检测科比'>
+    <img src='../style/img/img1/f2.png' title='检测杜兰特'>
+    <img src='../style/img/img1/f3.png' title='检测多人'>
 </div>
 
-##### 3. 动态检测
-###### (1) 代码示例
+#### 3. 动态检测
+##### (1) 代码示例
+
 ```
 # 导入cv图片
 import cv2 as cv
@@ -165,25 +167,32 @@ cv.destroyAllWindows()
 # 释放摄像头
 cap.release()
 ```
-###### (2) 检测效果
+
+##### (2) 检测效果
+
 + 各种摄像机调取检测人脸
+
 <div class='picFace'>
-    <img src='../style/img/img1/f4.png' height='200px' title='检测me'>
-    <img src='../style/img/img1/f5.png' height='200px' title='检测科比'>
-    <img src='../style/img/img1/f6.png' height='200px' title='检测多人'>
+    <img src='../style/img/img1/f4.png' title='检测me'>
+    <img src='../style/img/img1/f5.png' title='检测科比'>
+    <img src='../style/img/img1/f6.png' title='检测多人'>
 </div>
 
 + 读取视频文件检测人脸
+
 <div class='picFace'>
-    <img src='../style/img/img1/f7.png' height='200px' title='检测视频1'>
-    <img src='../style/img/img1/f8.png' height='200px' title='检测视频2'>
-    <img src='../style/img/img1/f9.png' height='200px' title='检测王冰冰'>
+    <img src='../style/img/img1/f7.png' title='检测视频1'>
+    <img src='../style/img/img1/f8.png' title='检测视频2'>
+    <img src='../style/img/img1/f9.png' title='检测王冰冰'>
 </div>
 
-#### 人脸录入
-##### 1. 流程图
+### 人脸录入
+#### 1. 流程图
+
 ![图片已失效](../style/img/img1/Face%20Entry.png "人脸录入流程图")
-##### 2. 代码示例
+
+#### 2. 代码示例
+
 ```
 #导入模块
 import cv2 as cv
@@ -211,15 +220,15 @@ cap.release()
 # 释放内存
 cv.destroyAllWindows()
 ```
-##### 3. 检测效果
+
+#### 3. 检测效果
+
 <style>
     .picFace1 {
         margin: 10px;
-        height: 150px;
+        width: 500px;
     }
     .picFace1 img {
-        float: left;
-        height: 150px;
         margin: 0 10px;
     }
 </style>
@@ -230,10 +239,14 @@ cv.destroyAllWindows()
     <img src='../style/img/img1/f13.png' title='4.Kobe Bean Bryant.png'>
 </div>
 
-#### 数据训练
-##### 1. 流程图
+### 数据训练
+
+#### 1. 流程图
+
 ![图片已失效](../style/img/img1/The%20Train%20Data.png "数据训练流程图")
-##### 2. 代码示例
+
+#### 2. 代码示例
+
 ```
 import os
 import cv2 as cv
@@ -284,21 +297,28 @@ if __name__ == '__main__':
     # 保存文件：生成一个一一对应的关系文件
     recognizer.write('trainer/trainer.yml')
 ```
-##### 3. error
-###### 报错信息 
+#### 3. error
+
+##### 报错信息 
+
 +    ① AttributeError: module 'cv2' has no attribute 'detectMultiScale'
 +    ② AttributeError: module 'cv2' has no attribute 'face'
-<br>
 
-###### 出错原因：
+##### 出错原因：
+
 ①可能cv2相关包没有安装完
 ②没有下载contrib库
-###### 解决方法：
+
+##### 解决方法：
+
 ①pip uninstall opencv-python
 ②安装wheel包，在https://www.lfd.uci.edu/~gohlke/pythonlibs/下载相应Python版本的opencv最新库
 ③下载contrib库：pip install opencv-contrib-python
-###### 训练模型文件
+
+##### 训练模型文件
+
 ![图片已失效](../style/img/img1/datamodel.png "trainer.yml")
+
 <style>
     p {
         color: #fff;
@@ -311,10 +331,14 @@ if __name__ == '__main__':
     YAML 的语法和其他高级语言类似，并且可以简单表达清单、散列表，标量等数据形态。 它使用空白符号缩进和大量依赖外观的特色，特别适合用来表达或编辑数据结构、各种配置文件、倾印调试内容、文件大纲（例如：许多电子邮件标题格式和 YAML 非常接近）。尽管它比较适合用来表达层次结构式（hierarchical model）的数据结构，不过也有精致的语法可以表示关系性（relational model）的数据。由于 YAML 使用空白字符和分行来分隔数据，使得它特别适合用 grep／Python／Perl／Ruby 操作。其让人最容易上手的特色是巧妙避开各种封闭符号，如：引号、各种括号等，这些符号在嵌套结构时会变得复杂而难以辨认
 </p>
 
-#### 人脸识别
-##### 1. 流程图
+### 人脸识别
+
+#### 1. 流程图
+
 ![图片已失效](../style/img/img1/Face%20Recognition.png "人脸识别流程图")
-##### 2. 代码示例
+
+#### 2. 代码示例
+
 ```
 from typing import Text
 import cv2
@@ -444,7 +468,7 @@ cap.release()
 playsound('./mp3/1.mp3')#输出音频
 #print(names)
 ```
-##### 3. 检测效果
+
+#### 3. 检测效果
 
 <video controls height='100%' width='100%' src="../style/img/img1/last.webm"></video>
-
